@@ -56,11 +56,11 @@ function setup() {
       oscillators[i].volume.rampTo(slider.value, 0.1);
     });
   });
-
+  //update frequencies [make seperate function]
   freqBoxs.forEach((freq, i) => {
     freq.addEventListener("input", () => {
       if (freq.value > 20 && freq.value < 20000) {
-        oscillators[i].frequency.value = freq.value;
+        oscillators[i].frequency.rampTo(freq.value, 1);
       }
     });
   });
