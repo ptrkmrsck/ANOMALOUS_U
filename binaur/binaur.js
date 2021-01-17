@@ -1,10 +1,11 @@
-let sliders,
+let slider,
   db1,
   startStop,
   freqBoxs,
   panL,
   panR,
-  count = 0;
+  count = 0,
+  btn;
 
 let tonez = [
   [379.9, 380.1, 440.1, 439.9],
