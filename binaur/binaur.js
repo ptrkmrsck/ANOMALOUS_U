@@ -9,22 +9,18 @@ window.onload = () => {
 };
 
 function setup() {
-  sliders = document.querySelectorAll(".slider");
-  db1 = document.querySelector("db1");
+  slider = document.querySelector("#volume");
   startStop = document.querySelector("#startStop");
   freqBoxs = document.querySelectorAll(".freq");
 
-  //update number boxes
-  freqs.forEach((f, i) => {
-    freqBoxs[i].value = f;
-  });
-  //setup oscillators
+  //set up pan's
   panL = new Tone.Panner({
     pan: -1,
   }).toDestination();
   panR = new Tone.Panner({
     pan: 1,
   }).toDestination();
+  //setup oscillators
   for (let i = 0; i < 4; i++) {
     oscillators.push(
       new Tone.Oscillator({
@@ -47,15 +43,16 @@ function setup() {
     }
     oscillators.forEach((o) => {
       o.start();
-      o.volume.rampTo(-20, 0.5);
+      o.volume.rampTo(-10, 0.5);
     });
   });
   //connect sliders oscillator volumes
-  sliders.forEach((slider, i) => {
-    slider.addEventListener("input", (e) => {
-      oscillators[i].volume.rampTo(slider.value, 0.1);
-    });
+
+  slider.addEventListener("input", (e) => {
+    console.log(slider.value);
+    Tone.Master.volume.rampTo(slider.value, 0.1);
   });
+
   //update frequencies [make seperate function]
   freqBoxs.forEach((freq, i) => {
     freq.addEventListener("input", () => {
