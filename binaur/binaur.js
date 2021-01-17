@@ -1,4 +1,21 @@
-let sliders, db1, startStop, freqBoxs, panL, panR;
+let sliders,
+  db1,
+  startStop,
+  freqBoxs,
+  panL,
+  panR,
+  count = 0;
+
+let tonez = [
+  [379.9, 380.1, 440.1, 439.9],
+  [320.2, 320.5, 319.5, 319.7],
+  [331, 330, 341, 321],
+  [286, 346, 220, 284],
+  [102, 402, 202, 302],
+  [272, 352, 526, 450],
+  [280, 271.1, 217, 218.7],
+  [520, 95, 260, 130],
+];
 
 const oscillators = [];
 const freqs = [286, 346, 220, 284];
@@ -12,6 +29,7 @@ function setup() {
   slider = document.querySelector("#volume");
   startStop = document.querySelector("#startStop");
   freqBoxs = document.querySelectorAll(".freq");
+  btn = document.querySelector("#cycle");
 
   //set up pan's
   panL = new Tone.Panner({
@@ -20,11 +38,12 @@ function setup() {
   panR = new Tone.Panner({
     pan: 1,
   }).toDestination();
+
   //setup oscillators
   for (let i = 0; i < 4; i++) {
     oscillators.push(
       new Tone.Oscillator({
-        frequency: freqs[i],
+        frequency: tonez[2][i],
         type: "sine",
         volume: -Infinity,
         // detune: Math.random() * 30 - 15,
@@ -32,7 +51,7 @@ function setup() {
     );
   }
 
-  //start and stop oscillators
+  //start and stop oscillators via toggle checkbox
   startStop.addEventListener("change", () => {
     if (!startStop.checked) {
       oscillators.forEach((o) => {
@@ -46,53 +65,19 @@ function setup() {
       o.volume.rampTo(-10, 0.5);
     });
   });
-  //connect sliders oscillator volumes
 
+  //connect slider to master volume
   slider.addEventListener("input", (e) => {
-    console.log(slider.value);
     Tone.Master.volume.rampTo(slider.value, 0.1);
   });
 
-  //update frequencies [make seperate function]
-  freqBoxs.forEach((freq, i) => {
-    freq.addEventListener("input", () => {
-      if (freq.value > 20 && freq.value < 20000) {
-        oscillators[i].frequency.rampTo(freq.value, 1);
-      }
+  // cycle through tonez
+  btn.addEventListener("click", () => {
+    let modcount = count % tonez.length;
+    oscillators.forEach((osc, i) => {
+      osc.frequency.rampTo(tonez[modcount][i], 1);
     });
+    console.log(tonez[modcount]);
+    count++;
   });
 }
-
-// const oscillators = [];
-
-// const bassFreq = 32;
-
-// for (let i = 0; i < 8; i++) {
-//   oscillators.push(new Tone.Oscillator({
-//     frequency: bassFreq * i,
-//     type: "sawtooth4",
-//     volume: -Infinity,
-//     detune: Math.random() * 30 - 15,
-//   }).toDestination());
-// }
-
-// // bind the interface
-// document.querySelector("tone-play-toggle").addEventListener("start", e => {
-//   oscillators.forEach(o => {
-//     o.start();
-//     o.volume.rampTo(-20, 1);
-//   });
-// });
-
-// document.querySelector("tone-play-toggle").addEventListener("stop", e => {
-//   oscillators.forEach(o => {
-//     o.stop("+1.2");
-//     o.volume.rampTo(-Infinity, 1);
-//   });
-// });
-
-// document.querySelector("tone-slider").addEventListener("input", e => {
-//   oscillators.forEach((osc, i) => {
-//     osc.frequency.rampTo(bassFreq * i * parseFloat(e.target.value), 0.4);
-//   });
-// });
