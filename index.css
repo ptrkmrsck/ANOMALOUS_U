@@ -7,6 +7,11 @@ body {
   font-family: monospace;
 }
 
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
 @media only screen and (max-width: 400px) {
   body {
     margin-left: 10%;
@@ -16,6 +21,7 @@ body {
 
 .binaur {
   font-family: "Syne";
+  font-size: 30px;
   display: inline-block;
   cursor: pointer;
   background-color: white;
