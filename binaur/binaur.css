@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Lustria&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa&family=Hammersmith+One&family=Syne&display=swap");
 
 * {
   margin: 0;
@@ -10,6 +11,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background: linear-gradient(45deg, #5e5e5e, #060606);
 }
 
 .toggle {
@@ -20,20 +26,40 @@ body {
   margin-top: 30px;
 }
 
-#start-stop {
+input[type="checkbox"] {
+  opacity: 0;
+  z-index: -1;
+}
+
+input[type="checkbox"] + label {
   width: 40px;
   height: 40px;
+  text-indent: -999px;
+  overflow: hidden;
+  border: 2px solid white;
+  border-radius: 100%;
   cursor: pointer;
+  background: transparent;
+  transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+}
+
+input[type="checkbox"]#start-stop:checked + label {
+  border: 2px solid white;
+  background: white;
 }
 
 h1 {
-  font-family: "Lustria", serif;
+  font-family: "Syne";
   margin: 20px;
+  color: white;
 }
 p {
-  font-family: "Lato", sans;
+  font-family: monospace;
   text-align: center;
   font-size: 14px;
+  color: white;
 }
 
 /* volume stuff  */
@@ -41,7 +67,7 @@ p {
   -webkit-appearance: none;
   height: 18px;
   width: 2px;
-  background: black;
+  background: white;
   cursor: pointer;
   transform: translateY(-10px);
 }
@@ -49,14 +75,14 @@ p {
   width: 100%;
   height: 5px;
   cursor: pointer;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   transform: translateY(2.8px);
 }
 #volume::-moz-range-track {
   width: 100%;
   height: 5px;
   cursor: pointer;
-  border-top: 1px solid black;
+  border-top: 1px solid white;
   transform: translateY(2.8px);
 }
 
@@ -73,36 +99,50 @@ p {
 }
 
 #testimony {
-  font-family: "Lato";
+  font-family: monospace;
   font-size: 14px;
+  color: #aaff00;
   margin: 20px;
   padding: 5px;
-  border: 1px solid #000000;
+  border: 1px solid white;
   border-radius: 0px;
+  box-shadow: 0 6px 20px 0 rgb(0, 0, 0, 0.2);
   resize: none;
+  background-color: rgba(255, 255, 255, 0.12);
+  outline: none;
+}
+#testimony::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
 }
 
 #testimony:focus {
-  border: 1px solid #000000;
+  box-shadow: 4px 4px #aaff00, 0 6px 20px 0 rgb(0, 0, 0, 0.2);
   border-radius: 1px;
-  background: rgba(255, 105, 180, 0.475);
+  /* background: rgba(255, 105, 180, 0.475); */
 }
 
 .cycle {
-  font-family: "Lato";
-  background-color: #00000010;
-  border: 1px solid #000000;
+  font-family: "Syne";
+  box-shadow: 0 6px 20px 0 rgb(0, 0, 0, 0.4);
   display: inline-block;
   cursor: pointer;
-  color: #000000;
+  background-color: white;
+  border: 1px solid white;
+  color: black;
   font-size: 17px;
   padding: 12px 12px;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .cycle:hover {
-    background-color: #ff00ff;
-    border: 1px solid #000000;
+    background-color: #aaff00;
+    border: 1px solid #aaff00;
+    color: black;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
+}
+
+.cycle:focus {
+  outline: none;
 }

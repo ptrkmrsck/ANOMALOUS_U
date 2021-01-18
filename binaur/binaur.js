@@ -19,6 +19,17 @@ let tonez = [
   [520, 95, 260, 130],
 ];
 
+let placeholder = [
+  "plchld1",
+  "plchld2",
+  "plchld3",
+  "plchld4",
+  "plchld5",
+  "plchld6",
+  "plchld7",
+  "plchld8",
+];
+
 const oscillators = [];
 const freqs = [286, 346, 220, 284];
 const bassFreq = 100;
@@ -76,7 +87,9 @@ function setup() {
 
   // cycle through tonez
   btn.addEventListener("click", () => {
+    testimony.value = "";
     let modcount = count % tonez.length;
+    testimony.placeholder = placeholder[modcount];
     oscillators.forEach((osc, i) => {
       osc.frequency.rampTo(tonez[modcount][i], 1);
     });

@@ -10,10 +10,23 @@
   <body>
     <div class="toggle">
       <input type="checkbox" name="start-stop" id="start-stop" />
-      <span class="checkmark"></span>
+      <label for="start-stop"></label>
       <h1>begin experience</h1>
     </div>
 
+    <div>
+      <textarea
+        type="text"
+        name="testimony"
+        id="testimony"
+        cols="40"
+        rows="10"
+        placeholder="please respond with your experience"
+      ></textarea>
+    </div>
+    <div>
+      <button class="cycle">submit</button>
+    </div>
     <div>
       <input
         id="volume"
@@ -24,19 +37,6 @@
         class="slider"
       />
       <p>adjust loudness</p>
-    </div>
-    <div>
-      <textarea
-        type="text"
-        name="testimony"
-        id="testimony"
-        cols="50"
-        rows="10"
-        placeholder="please respond with your experience"
-      ></textarea>
-    </div>
-    <div>
-      <button class="cycle">⏦ commit response ⏦</button>
     </div>
 
     <script type="module" src="./binaur.js"></script>

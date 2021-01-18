@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa&family=Hammersmith+One&family=Syne&display=swap");
+
+body {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+  font-family: monospace;
+}
+
+@media only screen and (max-width: 400px) {
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+.binaur {
+  font-family: "Syne";
+  display: inline-block;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-size: 17px;
+  padding: 12px 12px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .binaur:hover {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.binaur:focus {
+  outline: none;
+}
