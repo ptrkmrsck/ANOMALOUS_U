@@ -4,24 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tonez</title>
-    <style>
-      .slider {
-        -webkit-appearance: slider-vertical;
-      }
-    </style>
+    <link rel="stylesheet" href="./binaur.css" />
     <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
   </head>
   <body>
-    <input type="checkbox" name="start/stop" id="startStop" />
-    <input
-      id="volume"
-      type="range"
-      min="-59"
-      max="0"
-      value="0"
-      class="slider"
-    />
-    <button id="cycle">⏦</button>
+    <div class="toggle">
+      <input type="checkbox" name="start-stop" id="start-stop" />
+      <span class="checkmark"></span>
+      <h1>begin experience</h1>
+    </div>
+
+    <div>
+      <input
+        id="volume"
+        type="range"
+        min="-59"
+        max="0"
+        value="-6"
+        class="slider"
+      />
+      <p>adjust loudness</p>
+    </div>
+    <div>
+      <textarea
+        type="text"
+        name="testimony"
+        id="testimony"
+        cols="50"
+        rows="10"
+        placeholder="please respond with your experience"
+      ></textarea>
+    </div>
+    <div>
+      <button class="cycle">⏦ commit experience</button>
+    </div>
 
     <script type="module" src="./binaur.js"></script>
   </body>

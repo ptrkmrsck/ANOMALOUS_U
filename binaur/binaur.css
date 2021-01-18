@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Lustria&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#start-stop {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Lustria", serif;
+  margin: 20px;
+}
+p {
+  font-family: "Lato", sans;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* volume stuff  */
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 2px;
+  background: black;
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+#volume::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  border-top: 1px solid black;
+  transform: translateY(2.8px);
+}
+#volume::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  border-top: 1px solid black;
+  transform: translateY(2.8px);
+}
+
+#volume {
+  -webkit-appearance: none;
+  width: 200px;
+  background: transparent;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+#volume:focus {
+  outline: none;
+}
+
+#testimony {
+  font-family: "Lato";
+  font-size: 12px;
+  margin: 20px;
+  padding: 5px;
+}
+
+.cycle {
+  font-family: "Lato";
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-size: 17px;
+  padding: 12px 12px;
+}
+.cycle:hover {
+  background-color: #ff00ff;
+}

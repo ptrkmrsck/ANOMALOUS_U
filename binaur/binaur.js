@@ -5,7 +5,8 @@ let slider,
   panL,
   panR,
   count = 0,
-  btn;
+  btn,
+  testimony;
 
 let tonez = [
   [379.9, 380.1, 440.1, 439.9],
@@ -28,9 +29,10 @@ window.onload = () => {
 
 function setup() {
   slider = document.querySelector("#volume");
-  startStop = document.querySelector("#startStop");
+  startStop = document.querySelector("#start-stop");
   freqBoxs = document.querySelectorAll(".freq");
-  btn = document.querySelector("#cycle");
+  btn = document.querySelector(".cycle");
+  testimony = document.querySelector("#testimony");
 
   //set up pan's
   panL = new Tone.Panner({
