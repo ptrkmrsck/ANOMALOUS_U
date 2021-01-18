@@ -33,7 +33,7 @@ h1 {
 p {
   font-family: "Lato", sans;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* volume stuff  */
@@ -74,14 +74,23 @@ p {
 
 #testimony {
   font-family: "Lato";
-  font-size: 12px;
+  font-size: 14px;
   margin: 20px;
   padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  resize: none;
+}
+
+#testimony:focus {
+  border: 1px solid #000000;
+  border-radius: 1px;
+  background: rgba(255, 105, 180, 0.475);
 }
 
 .cycle {
   font-family: "Lato";
-  background-color: #ffffff;
+  background-color: #00000010;
   border: 1px solid #000000;
   display: inline-block;
   cursor: pointer;
@@ -89,6 +98,11 @@ p {
   font-size: 17px;
   padding: 12px 12px;
 }
-.cycle:hover {
-  background-color: #ff00ff;
+
+@media (hover: hover) and (pointer: fine) {
+  .cycle:hover {
+    background-color: #ff00ff;
+    border: 1px solid #000000;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
 }
