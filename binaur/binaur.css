@@ -11,23 +11,51 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-60deg, #202020, #181818, #303030);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(
+    180deg,
+    #1b1a1a,
+    #212d2a,
+    #2f2e31,
+    #25292c,
+    #2f2839
+  );
+  background-size: 1000% 1000%;
+  -webkit-animation: AnimationName 16s ease infinite;
+  -moz-animation: AnimationName 16s ease infinite;
+  animation: AnimationName 16s ease infinite;
 }
 
-body {
-}
-
-@keyframes gradient {
+@-webkit-keyframes AnimationName {
   0% {
-    background-position: 0% 50%;
+    background-position: 48% 0%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 53% 90%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 48% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 48% 0%;
+  }
+  50% {
+    background-position: 53% 90%;
+  }
+  100% {
+    background-position: 48% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 48% 0%;
+  }
+  50% {
+    background-position: 53% 90%;
+  }
+  100% {
+    background-position: 48% 0%;
   }
 }
 
