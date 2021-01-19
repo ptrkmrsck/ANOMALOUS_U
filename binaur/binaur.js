@@ -20,14 +20,36 @@ let tonez = [
 ];
 
 let placeholder = [
-  "listen, again. what does this one feel like?",
-  "and this one?",
-  "how about this one?",
-  "is anything changing?",
-  "does this sound make you feel anything?",
-  "is this one better?",
-  "how would you describe this?",
-  "have you heard this sound before?",
+  "Listen. Take as much time as feels right. Respond:",
+  "Report your experience here:",
+  "Listening takes time. Perception only exists in time. Please respond:",
+  "Enter your experience:",
+  "Is anything changing?",
+  "Is this sound inside or outside of you?",
+  "Have you heard this sound before?",
+  "This sound should prevent any thoughts — if you have thoughts please report them here:",
+  "Has your experience been altered by the sound?",
+  "Allow the sound to wash over you. Examine it.",
+  "Some of these sounds are known to produce [insert feeling]. What do you think this sound does?",
+  "Can you hear what is being communicated?",
+  "Accept your immediate response, your first feeling. Understand it then let it go and seek to understand what is after.",
+  "You are correct.",
+  "Are you experiencing or have you ever experienced nonlocal intelligence?",
+  "Synchronicity is the coming together of inner and outer events that are not causally linked but are very meaningful to those who have the experience.",
+  "Where is the center?",
+  "Our imaginations have become exterior to ourselves.",
+  "Cognition occurs within a network that extends into the environment.",
+  "Would you like to keep going?",
+  "ok",
+  "What comes after?",
+  "Consciousness could be defined as the process by which informational associations are retrieved and traversed.",
+  "A hierophany is a manifestation of the sacred.",
+  "Can you listen deeper?",
+  "Can you perceive more?",
+  "What if you stop?",
+  "Begin Again.",
+  "Begin Again.",
+  "Begin Again.",
 ];
 
 const oscillators = [];
@@ -85,13 +107,18 @@ function setup() {
 
   // cycle through tonez
   btn.addEventListener("click", () => {
+    // empty textbox
     testimony.value = "";
-    let modcount = count % tonez.length;
-    testimony.placeholder = placeholder[modcount];
+    // modulo counters
+    let modtonezcount = count % tonez.length;
+    let modtextcount = count % placeholder.length;
+    // change placeholder to string from placeholder array
+    testimony.placeholder = placeholder[modtextcount];
+    //change tone
     oscillators.forEach((osc, i) => {
-      osc.frequency.rampTo(tonez[modcount][i], 1.5);
+      osc.frequency.rampTo(tonez[modtonezcount][i], 1.5);
     });
-    console.log(tonez[modcount]);
+    console.log(tonez[modtonezcount]);
     count++;
   });
 }
