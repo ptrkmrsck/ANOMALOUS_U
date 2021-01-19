@@ -31,8 +31,6 @@ let placeholder = [
 ];
 
 const oscillators = [];
-const freqs = [286, 346, 220, 284];
-const bassFreq = 100;
 
 window.onload = () => {
   setup();
