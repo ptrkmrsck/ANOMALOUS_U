@@ -11,11 +11,24 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background: linear-gradient(45deg, #5e5e5e, #060606);
+  background: linear-gradient(-60deg, #202020, #181818, #303030);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+body {
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .toggle {
