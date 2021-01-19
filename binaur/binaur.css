@@ -11,42 +11,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    180deg,
-    #1b1a1a,
-    #212d2a,
-    #2f2e31,
-    #25292c,
-    #2f2839
-  );
+  background: linear-gradient(150deg, #151515ff, #3d3d3dff);
   background-size: 1000% 1000%;
-  -webkit-animation: AnimationName 16s ease infinite;
-  -moz-animation: AnimationName 16s ease infinite;
-  animation: AnimationName 16s ease infinite;
+  animation: AnimationName 12s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 48% 0%;
-  }
-  50% {
-    background-position: 53% 90%;
-  }
-  100% {
-    background-position: 48% 0%;
-  }
-}
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 48% 0%;
-  }
-  50% {
-    background-position: 53% 90%;
-  }
-  100% {
-    background-position: 48% 0%;
-  }
-}
 @keyframes AnimationName {
   0% {
     background-position: 48% 0%;
@@ -112,6 +81,14 @@ p {
   cursor: pointer;
   transform: translateY(-10px);
 }
+#volume::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 18px;
+  width: 2px;
+  background: white;
+  cursor: pointer;
+  transform: translateY(-10px);
+}
 #volume::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
@@ -124,7 +101,7 @@ p {
   height: 5px;
   cursor: pointer;
   border-top: 1px solid white;
-  transform: translateY(2.8px);
+  transform: translateY(-6px);
 }
 
 #volume {
@@ -142,7 +119,7 @@ p {
 #testimony {
   font-family: monospace;
   font-size: 14px;
-  color: #aaff00;
+  color: #01ffff;
   margin: 20px;
   padding: 5px;
   border: 1px solid white;
@@ -158,7 +135,7 @@ p {
 }
 
 #testimony:focus {
-  box-shadow: 4px 4px #aaff00, 0 6px 20px 0 rgb(0, 0, 0, 0.2);
+  box-shadow: 4px 4px #01ffff, 0 6px 20px 0 rgb(0, 0, 0, 0.2);
   border-radius: 1px;
   /* background: rgba(255, 105, 180, 0.475); */
 }
@@ -176,9 +153,10 @@ p {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .cycle:hover {
-    background-color: #aaff00;
-    border: 1px solid #aaff00;
+  .cycle:hover,
+  .cycle.active {
+    background-color: #01ffff;
+    border: 1px solid #01ffff;
     color: black;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }

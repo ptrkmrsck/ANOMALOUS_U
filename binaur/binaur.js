@@ -20,14 +20,14 @@ let tonez = [
 ];
 
 let placeholder = [
-  "plchld1",
-  "plchld2",
-  "plchld3",
-  "plchld4",
-  "plchld5",
-  "plchld6",
-  "plchld7",
-  "plchld8",
+  "listen, again. what does this one feel like?",
+  "and this one?",
+  "how about this one?",
+  "is anything changing?",
+  "does this sound make you feel anything?",
+  "is this one better?",
+  "how would you describe this?",
+  "have you heard this sound before?",
 ];
 
 const oscillators = [];
@@ -91,7 +91,7 @@ function setup() {
     let modcount = count % tonez.length;
     testimony.placeholder = placeholder[modcount];
     oscillators.forEach((osc, i) => {
-      osc.frequency.rampTo(tonez[modcount][i], 1);
+      osc.frequency.rampTo(tonez[modcount][i], 1.5);
     });
     console.log(tonez[modcount]);
     count++;
