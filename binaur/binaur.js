@@ -113,6 +113,7 @@ function setup() {
   // cycle through tonez
   btn.addEventListener("click", () => {
     // empty textbox
+    // TODO use this.reset() instead?
     testimony.value = "";
     // modulo counters
     let modtonezcount = count % tonez.length;
