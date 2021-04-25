@@ -1,5 +1,8 @@
 index.html
 index.css
-/square
-/binaur
-/voice
+/balance
+/be
+/become
+/begin
+/begin-again
+/being
