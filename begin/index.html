@@ -5,6 +5,414 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>begin</title>
+    <link rel="stylesheet" href="../index.css" />
   </head>
-  <body></body>
+  <body>
+    <h1 class="syne beginning">You Are Beginning</h1>
+     <form id="st-join-web-form-6085af47ac55014a7c0db263" class="st-signupform" action="https://app2.simpletexting.com/join/joinContact" method="POST">
+       <div class="the-form">
+         <div class="step1-form">
+           <input type="hidden" name="webFormId" value="6085af47ac55014a7c0db263" id="webFormId">
+           <input type="hidden" name="country" value="USA" id="country">
+           <div class="st-title"></div>
+           <div class="required">
+             <label class="st-signupform__label" for="phone-6085af47ac55014a7c0db263">Phone</label>
+             <input id="phone-6085af47ac55014a7c0db263" name="phone" type="text" placeholder="(XXX) XXX-XXXX" maxlength="1600" data-type="phone" class="phoneNumber">
+           </div>
+            <div class="required">
+              <label class="st-signupform__label" for="firstName-6085af47ac55014a7c0db263">First name</label>
+              <input id="firstName-6085af47ac55014a7c0db263" name="firstName" type="text" placeholder="your name" maxlength="1600">
+            </div>
+         
+           <div class="st-font-caption">
+             <input id="terms-agreed-checkbox-6085af47ac55014a7c0db263" type="checkbox" name="terms-agreed">
+             <label for="terms-agreed-checkbox-6085af47ac55014a7c0db263">
+               I agree to receive promotional messages sent via an autodialer, and this agreement isn’t a condition of any purchase. I also agree to the
+             </label>
+             <a href="https://app2.simpletexting.com/web-forms/terms/6085af47ac55014a7c0db263" target="_blank">Terms of Service</a> and&nbsp;
+             <a href="https://app2.simpletexting.com/web-forms/privacy-policy/6085af47ac55014a7c0db263" target="_blank">Privacy Policy</a><br>
+             30 Msgs/Month. Msg &amp; Data rates may apply.
+             <p class="st-signupform-terms-agreed-error st-color-red st-hidden">
+               You have to agree on terms in order to proceed to the subscription.
+             </p>
+           </div>
+           <div class="st-join-web-form-submit-button-box">
+             <input type="submit" value="Subscribe Now" name="subscribe">
+             <p class="st-signupform-server-error-message st-color-red">&nbsp;</p>
+           </div>
+         </div>
+         <div class="step2-singleOptIn" style="display: none;">
+           <p>
+             Thank you! You're now signed up to receive text messages from ANOMALOUS_U.
+           </p>
+         </div>
+         <div class="step2-doubleOptIn" style="display: none;">
+           <p>
+             Just one more step! We sent a text to <span class="phone">&nbsp;</span> to confirm your subscription.
+             Please reply Y or Yes to finish signing up for messages from ANOMALOUS_U.
+           </p>
+         </div>
+       </div>
+
+
+       <style>
+        .beginning {
+          text-align: center;
+          margin: 20px;
+        }
+   
+        .st-title {
+          font-size: 1.25em;
+          font-weight: bold;
+          line-height: 1.5em;
+          color: rgba(0, 0, 0, 0.87);
+          margin-bottom: 8px;
+        }
+        
+        .st-general-error {
+          font-size: 1.25em;
+          line-height: 1.5em;
+          color: #F44336;
+          margin-bottom: 8px;
+          text-align: center;
+        }
+        
+        /* Error icon */
+        .st-general-error img {
+          width: 1.25em;
+          height: 1.25em;
+          margin-bottom: -0.2em;
+        }
+        
+        .st-font-caption {
+         font-family: monospace;
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.54);
+          line-height: 14px;
+          font-weight: 400;
+        }
+        
+        .st-font-caption a {
+          color: rgba(0, 0, 0, 0.54);
+        }
+        
+        .st-hidden {
+          display: none;
+        }
+        /* Sign-Up form */
+        .st-signupform {
+          max-width: 392px;
+          box-sizing: border-box;
+          padding: 24px;
+          font-family: sans-serif;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.87);
+          line-height: 1.5;
+          background: white;
+          border: 1px solid black;
+          box-shadow:  4px 4px  black;
+        }
+        
+        .st-signupform__label, ::placeholder {
+          color: black;
+          font-family: monospace;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 2em;
+          text-transform: uppercase;
+        }
+        
+        .st-signupform input:focus,
+        .st-signupform select:focus,
+        .st-signupform textarea:focus,
+        .st-signupform button:focus {
+          outline: none;
+        }
+        
+        .st-signupform .st-error-message {
+          -moz-transform: translateY(-16px);
+          -webkit-transform: translateY(-16px);
+          -o-transform: translateY(-16px);
+          -ms-transform: translateY(-16px);
+          transform: translateY(-16px);
+          color: gray;
+        }
+        
+        .st-signupform footer {
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.54);
+          text-align: center;
+          margin-top: 8px;
+        }
+        
+        .st-signupform footer a {
+          color: rgba(0, 0, 0, 0.54);
+        }
+        
+        .st-signupform div {
+          position: relative;
+        }
+        
+        .st-signupform div.required:after {
+          display: block;
+          content: "*";
+          color: #F44336;
+          font-size: 32px;
+          text-align: right;
+          /*background: white;*/
+          position: absolute;
+          right: 9px;
+          top: 25px;
+          width: 10px;
+          height: 20px;
+        }
+        
+        .st-signupform input[type="text"],textarea {
+          width: 100%;
+          background-color: white;
+          border: 1px solid rgba(0, 27, 72, 0.32);
+          box-sizing: border-box;
+          padding: 8px;
+          font-size: 14px;
+          margin-bottom: 16px;
+          outline: none;
+        }
+        
+        .st-signupform input[type="text"]:focus, textarea:focus {
+          border-color: black;
+          box-shadow: 2px 2px black;
+        }
+        
+        .st-signupform input[type="submit"] { 
+           display: block;
+          font-family: syne;
+          box-sizing: border-box;
+          padding: 8px 16px;
+          font-size: 18px;
+          text-decoration: none;
+          text-align: center;
+          cursor: pointer;
+          line-height: 20px !important;
+          border: 1px solid black;
+          color: black;
+          margin: 12px auto;
+          background-color: white;
+        }
+        .st-signupform input[type="submit"]:hover {
+          box-shadow: 2px 2px black;
+        }
+   
+        .st-signupform input[type="checkbox"] {
+          cursor: pointer;
+        }
+        
+        .st-signupform input.st-signupform-validation-error, textarea.st-signupform-validation-error,
+        .st-signupform input.st-signupform-validation-error:focus, textarea.st-signupform-validation-error:focus {
+          border-color: #858585;
+        }
+        
+        .st-signupform textarea {
+          padding-right: 24px;
+          resize: vertical;
+          min-height: 80px;
+          max-height: 200px;
+        }
+        </style>
+        <script>
+          (function joinWebForm(
+          win, doc, formId,
+          DUPLICATE_PHONE_EXCEPTION, DUPLICATE_EMAIL_EXCEPTION, CUSTOM_FIELDS_VALIDATION_EXCEPTION,
+          doubleOptIn
+        ) {
+          var XHR = ('onload' in new win.XMLHttpRequest()) ? win.XMLHttpRequest : win.XDomainRequest;
+        
+          var form;
+          var formServerErrorMessage;
+          var formTermsAgreedError;
+          var fieldErrorClassName = 'st-signupform-validation-error';
+        
+          function setServerErrorMessage(message) {
+            formServerErrorMessage.innerText = message;
+          }
+        
+          function isTermsAgreedAccepted() {
+            return form.querySelector('input[name="terms-agreed"]').checked;
+          }
+          function showTermsAgreedError() {
+            formTermsAgreedError.style.display = 'block';
+          }
+          function hideTermsAgreedError() {
+            formTermsAgreedError.style.display = 'none';
+          }
+        
+          function clearFormErrors() {
+            var fields = form.querySelectorAll('.' + fieldErrorClassName);
+        
+            Array.prototype.slice.call(fields)
+              .forEach(function (field) {
+                field.className = field.className
+                  .split(/\s/)
+                  .filter(className => className !== fieldErrorClassName && className)
+                  .join(' ');
+              });
+        
+            setServerErrorMessage('');
+            hideTermsAgreedError();
+          }
+        
+          function collectFormData() {
+            var data = {};
+        
+            Array.prototype.slice.call(form)
+              .forEach(function (field) {
+                data[field.name] = field.value;
+              });
+        
+            return data;
+          }
+        
+          function parseServerValidationError(response) {
+            var result = {};
+        
+            try {
+              var error = win.JSON.parse(response);
+        
+              if (error.code === DUPLICATE_PHONE_EXCEPTION) {
+                result.fieldName = 'phone';
+                result.errorMessage = 'Phone number already exists.';
+              } else if (error.code === DUPLICATE_EMAIL_EXCEPTION) {
+                result.fieldName = 'email';
+                result.errorMessage = 'Email already exists.';
+              } else if (error.code === CUSTOM_FIELDS_VALIDATION_EXCEPTION) {
+                result.fieldName = error.reasons[0].field;
+                result.errorMessage = error.reasons[0].reason;
+              } else {
+                result.fieldName = error.field;
+                result.errorMessage = error.reason;
+              }
+            } catch (_) { /* invalid response */ }
+        
+            result.fieldName = result.fieldName || '';
+            result.errorMessage = result.errorMessage || 'Validation error.';
+        
+            return result;
+          }
+        
+          function handleLoadForm() {
+            var validation;
+            var field;
+            var phone;
+        
+            if (this.status === 200) {
+              form.querySelector('.step1-form').style.display = 'none';
+        
+              if (doubleOptIn) {
+                phone = form.querySelector('.phoneNumber').value;
+                form.querySelector('.step2-doubleOptIn .phone').innerText = formatPhone(phone);
+                form.querySelector('.step2-doubleOptIn').style.display = 'block';
+              } else {
+                form.querySelector('.step2-singleOptIn').style.display = 'block';
+              }
+        
+              form.reset();
+            } else if (this.status === 418) {
+              validation = parseServerValidationError(this.responseText);
+        
+              if (validation.fieldName) {
+                field = form.querySelector('input[name="' + validation.fieldName + '"]');
+                field.className += ' ' + fieldErrorClassName;
+              }
+        
+              setServerErrorMessage(validation.errorMessage);
+            } else {
+              setServerErrorMessage('Internal Error. Please, try later.');
+            }
+          }
+        
+          function handleErrorForm() {
+            setServerErrorMessage('Internal Error. Please, try later.');
+          }
+        
+          function sendForm() {
+            var data = collectFormData();
+            var url = form.action + '?r=' + Date.now();
+            var request = new XHR();
+        
+            request.open(form.method, url);
+        
+            request.onload = handleLoadForm;
+            request.onerror = handleErrorForm;
+            request.ontimeout = handleErrorForm;
+        
+            try {
+              request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            } catch (_) { /* ignore if we can't set headers */ }
+        
+            request.send(win.JSON.stringify(data));
+          }
+        
+          function handleSubmitForm(event) {
+            event.preventDefault();
+        
+            clearFormErrors();
+        
+            if (!isTermsAgreedAccepted()) {
+              showTermsAgreedError();
+            } else {
+              sendForm();
+            }
+          }
+        
+          function formatPhone(value) {
+            var numbers = value.replace(/\D/g, '');
+            var firstPart = numbers.substring(0, 3);
+            var secondPart = numbers.substring(3, 6);
+            var thirdPart = numbers.substring(6, 10);
+            var result = '';
+        
+            if (firstPart) {
+              result += ' (' + firstPart;
+            }
+        
+            if (secondPart) {
+              result += ') ' + secondPart;
+            }
+        
+            if (thirdPart) {
+              result += '-' + thirdPart;
+            }
+        
+            return result;
+          }
+        
+          function handleChangePhoneField(event) {
+            var field = event.currentTarget;
+        
+            field.value = formatPhone(field.value);
+          }
+        
+          function handleLoad() {
+            var phoneFields;
+        
+            form = doc.querySelector('#' + formId);
+            formServerErrorMessage = form.querySelector('.st-signupform-server-error-message');
+            formTermsAgreedError = form.querySelector('.st-signupform-terms-agreed-error');
+            phoneFields = form.querySelectorAll('input[data-type="phone"]');
+        
+            form.addEventListener('submit', handleSubmitForm);
+            Array.prototype.slice.call(phoneFields)
+              .forEach(function (field) {
+                field.addEventListener('input', handleChangePhoneField);
+              });
+          }
+        
+          win.addEventListener('load', handleLoad);
+        }
+        )(
+            window, document, 'st-join-web-form-6085af47ac55014a7c0db263',
+            'DuplicateContactPhoneException', 'DuplicateContactEmailException', 'CustomFieldsValidationException',
+            
+          );
+        </script>
+  </body>
 </html>
