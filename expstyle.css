@@ -1,21 +1,36 @@
 body {
   background-color: rgb(19, 26, 26);
   margin: 20px;
+  max-width: 800px;
 }
 h1 {
   border: 1px solid white;
   box-shadow: 3px 3px white;
   text-shadow: 1px 1px white;
 }
-h2 {
+h2,
+p,
+ul {
   font-family: monospace;
   color: white;
 }
-p {
+
+h2 {
+  font-size: 18px;
+}
+
+.warning {
   color: rgba(201, 201, 201, 0.721);
 }
+
 audio {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* .player {
   display: grid;
   place-items: center;
-  margin: 20px;
-}
+} */
