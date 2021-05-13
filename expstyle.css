@@ -10,7 +10,8 @@ h1 {
 }
 h2,
 p,
-ul {
+ul,
+li {
   font-family: monospace;
   color: white;
 }
