@@ -28,7 +28,6 @@ function randomTone() {
     tones.currentTime = toneArr[rdm];
   }
   oldNum = rdm;
-
   toneTimer = setTimeout(randomTone, dur);
 }
 
