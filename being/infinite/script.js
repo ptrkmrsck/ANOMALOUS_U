@@ -6,7 +6,7 @@ let toneArr,
   dur = 10000;
 
 window.onLoad = setup();
-window.addEventListener("click touchstart", playPause);
+window.addEventListener("click", playPause);
 
 function setup() {
   tones = document.getElementById("tones");
