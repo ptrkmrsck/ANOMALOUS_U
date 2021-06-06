@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>being</title>
+    <script type="module" src="./script.js"></script>
+  </head>
+  <style>
+    body {
+      background-color: rgb(19, 26, 26);
+      margin: 20px;
+      max-width: 800px;
+    }
+    .clickAnywhere {
+      font-family: monospace;
+      color: white;
+      display: grid;
+      place-items: center;
+      margin-top: 40%;
+    }
+  </style>
+  <body>
+    <h2 class="clickAnywhere">click anywhere to begin</h2>
+    <div>
+      <audio
+        id="tones"
+        controls
+        src="./being_tones.mp3"
+        type="audio/mpeg"
+        hidden="true"
+      ></audio>
+    </div>
+  </body>
+</html>
