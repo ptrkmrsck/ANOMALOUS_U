@@ -6,12 +6,15 @@ let toneArr,
   dur = 10000;
 
 window.onLoad = setup();
-window.addEventListener("click", playPause);
+// window.addEventListener("click", playPause);
+
+["click", "ontouchstart"].forEach((evt) =>
+  window.addEventListener(evt, playPause, false)
+);
 
 function setup() {
   tones = document.getElementById("tones");
   theText = document.querySelector(".clickAnywhere");
-  console.log(theText);
   toneArr = [
     1, 61, 121, 181, 241, 301, 361, 421, 481, 541, 601, 661, 721, 781, 841,
   ];
