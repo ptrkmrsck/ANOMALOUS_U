@@ -6,8 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>beyond</title>
     <link rel="stylesheet" href="../index.css" />
+    <style>
+      #experience {
+        font-family: monospace;
+        font-size: 14px;
+        color: red;
+        margin-bottom: 12px;
+        margin-left: 0px;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 0px;
+        box-shadow: 4px 4px black;
+        resize: none;
+        background-color: rgba(255, 255, 255, 0.12);
+        outline: none;
+      }
+      #experience::placeholder {
+        color: rgba(0, 0, 0, 0.619);
+        border: none;
+      }
+      button {
+        font-family: "Syne";
+        box-shadow: 2px 2px black;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+        font-size: 17px;
+        padding: 12px 12px;
+        position: relative;
+        left: 175px;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        button:hover,
+        button.active {
+          background-color: #01ffff;
+          box-shadow: 3px 3px red;
+          color: black;
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+      }
+
+      button:focus {
+        outline: none;
+      }
+    </style>
   </head>
   <body>
-    <h1 class="syne">beyond</h1>
+    <h2 class="syne">beyond</h2>
+    <form name="submit-to-google-sheet">
+      <textarea
+        name="experience"
+        id="experience"
+        type="text"
+        cols="35"
+        rows="10"
+        placeholder="You are invited to share any ANOMALOUS experiences from the past 10 days."
+        required
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzcZt19PP5Ntmud1keTkFybiWf1g3Mnvl5xJ4N9A1pgYFnG-K6E/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      let experience = document.querySelector("#experience");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            experience.value = "";
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
