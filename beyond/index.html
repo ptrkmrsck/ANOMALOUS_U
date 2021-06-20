@@ -7,6 +7,9 @@
     <title>beyond</title>
     <link rel="stylesheet" href="../index.css" />
     <style>
+      .black-background {
+        background-color: black;
+      }
       #experience {
         font-family: monospace;
         font-size: 14px;
@@ -18,7 +21,7 @@
         border-radius: 0px;
         box-shadow: 4px 4px black;
         resize: none;
-        background-color: rgba(255, 255, 255, 0.12);
+        background-color: rgba(255, 255, 255, 0);
         outline: none;
       }
       #experience::placeholder {
@@ -29,7 +32,7 @@
         font-family: "Syne";
         box-shadow: 2px 2px black;
         cursor: pointer;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
         border: 1px solid black;
         color: black;
         font-size: 17px;
@@ -65,7 +68,7 @@
         placeholder="You are invited to share any ANOMALOUS experiences from the past 10 days."
         required
       ></textarea>
-      <button type="submit">Submit</button>
+      <div><button type="submit">Submit</button></div>
     </form>
 
     <script>
@@ -73,12 +76,14 @@
         "https://script.google.com/macros/s/AKfycbzcZt19PP5Ntmud1keTkFybiWf1g3Mnvl5xJ4N9A1pgYFnG-K6E/exec";
       const form = document.forms["submit-to-google-sheet"];
       let experience = document.querySelector("#experience");
+      let body = document.querySelector("body");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        body.classList.toggle("black-background");
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => {
-            console.log("Success!", response);
+            body.classList.toggle("black-background");
             experience.value = "";
           })
           .catch((error) => console.error("Error!", error.message));
